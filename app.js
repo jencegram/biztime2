@@ -29,6 +29,7 @@ app.use(function (req, res, next) {
 
 /** General error handler */
 app.use((err, req, res, next) => {
+  console.error(err.stack); // This will print the error stack trace for debugging.
   res.status(err.status || 500);
 
   return res.json({
